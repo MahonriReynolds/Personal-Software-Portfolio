@@ -18,8 +18,6 @@ The purpose of this project is to explore the Rust language. It looks at the bas
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
 - [Medium | Simulating Flocking with the Boids Algorithm](https://medium.com/fragmentblog/simulating-flocking-with-the-boids-algorithm-92aef51b9e00)
 - [GeeksForGeeks | Rust Basics](https://www.geeksforgeeks.org/rust-basics/)
 
