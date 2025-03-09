@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCWC Inventory Management</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="content-wrapper">
+
+        <nav class="sidepanel">
+            <ul>
+              <li><a href="dashboard" id="dashboard-link"><i class="fa fa-tachometer-alt"></i>Dashboard</a></li>
+              <li><a href="purchase-report" id="purchase-report-link"><i class="fa fa-file-invoice"></i>Report Purchase</a></li>
+              <li><a href="usage-report" id="usage-report-link"><i class="fa fa-chart-line"></i>Report Usage</a></li>
+              <!-- <li><a href="server-settings" id="server-settings-link"><i class="fa fa-cogs"></i>Server Settings</a></li> -->
+            </ul>
+        </nav>
+        
+
+        <div class="main-content">
+            <div class="form-wrapper">
+                <h2>Report Purchases</h2>
+                <form id="purchase-form">
+                    <!-- Section for Items -->
+                    <div id="items-section">
+                        <!-- Dynamically generated items will appear here -->
+                    </div>
+
+                    <!-- Button to add new item -->
+                    <button type="button" id="add-item-btn">Add Another Item</button>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-btn">Submit Report</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+                
+    <script src="scripts/report-purchase.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

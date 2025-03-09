@@ -1,0 +1,402 @@
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #2c2c2e;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Layout Containers */
+.content-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row; /* Ensure it stays in a row */
+}
+
+
+
+
+
+/* Side Panel */
+.sidepanel {
+  height: 100%;
+  width: 20%;
+  min-width: 180px;
+  max-width: 250px;
+  background: linear-gradient(180deg, #1a1a1a, #333);
+  border-right: 1px solid #444;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.sidepanel ul {
+  list-style: none;
+}
+
+.sidepanel li {
+  margin-bottom: 20px;
+}
+
+.sidepanel a {
+  color: #e0e0e0;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 16px;  /* Add more horizontal padding for extra room */
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 0;  /* Ensures no extra spacing is added around links */
+  white-space: nowrap; /* Prevents text from wrapping */
+  width: 100%; /* Makes links take full width of their container */
+}
+
+/* Active Link Styling */
+.sidepanel a.active {
+  border: 2px solid #25bac3; /* Basic border for active link */
+  background-color: rgba(37, 186, 195, 0.1); /* Light background color for active link */
+  color: #25bac3; /* Accent color for text */
+  font-weight: bold;
+}
+
+/* Hover Effect */
+.sidepanel a:hover {
+  background-color: #25bac3;
+  color: #1a1a1a; /* Darken text color on hover */
+  transform: translateX(5px);
+}
+
+.sidepanel a:active {
+  transform: translateX(3px);
+}
+
+.sidepanel a:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(37, 186, 195, 0.6);
+}
+
+.sidepanel a::before {
+  content: '';
+  width: 5px;
+  height: 100%;
+  background-color: #25bac3;
+  display: inline-block;
+  margin-right: 10px;
+  visibility: hidden;
+}
+
+.sidepanel a:hover::before {
+  visibility: visible;
+}
+
+.sidepanel a i {
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+
+
+
+
+
+/* Main Content Grid */
+.main-content {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2px;
+  padding: 5px;
+  background-color: #1e1e1e;
+}
+
+/* Section Base Styling */
+#charts-section,
+#engagement-section {
+  background-color: #29292b;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#charts-section {
+  grid-column: span 2;
+  grid-row: span 4;
+  display: block;
+  overflow-y: auto;
+  padding-top: 20px;
+}
+
+#charts-section canvas {
+  width: 100%;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Table Section */
+#table-section {
+  grid-column: 3;
+  grid-row: span 3;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+#table-section table {
+  border-collapse: collapse;
+  background-color: #29292b; /* Dark background */
+  width: 100%;
+}
+
+#table-section th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #555; /* Dark border color */
+}
+
+#table-section th {
+  color: #e0e0e0; /* Light text color for headers */
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Ensures headers stay on top of table rows */
+  background-color: #212121 !important;
+  box-shadow: 0 -2px 0 #25bac3, 0 2px 0 #25bac3;
+}
+
+#table-section tr {
+  width: 90%;
+}
+
+#table-section tr:nth-child(odd) {
+  background-color: #333; /* Darker alternating row background */
+}
+
+#table-section tr:not(:first-child):hover {
+  background-color: #555;
+  border: 2px solid #25bac3;
+}
+
+#table-section td {
+  font-size: 14px;
+  color: #e0e0e0; /* Light text color */
+}
+
+#table-section td, th {
+  text-align: center;
+}
+
+/* Add icons or indicators for "Critical" and "Warning" */
+#table-section td.critical {
+  color: #f44336; /* Red */
+  font-weight: bold;
+}
+
+#table-section td.warning {
+  color: #ff9800; /* Orange */
+  font-weight: bold;
+}
+
+
+#engagement-section {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+#engagement-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Form Container */
+.form-wrapper {
+  background-color: #29292b;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+.form-wrapper h2 {
+  color: #e0e0e0;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Item Section */
+#items-section .item-entry {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  display: flex;
+  justify-content: space-between; /* Distribute items horizontally */
+  gap: 20px; /* Add space between input fields */
+  align-items: center; /* Vertically center the items */
+}
+
+#items-section .item-entry label {
+  font-size: 14px;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+  display: block;
+  width: 100%; /* Ensure labels take full width */
+}
+
+#items-section .item-entry select,
+#items-section .item-entry input[type="date"] {
+  flex: 1; /* Make input fields take equal space */
+  padding: 12px;
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #444;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+#items-section .item-entry select:focus,
+#items-section .item-entry input[type="date"]:focus {
+  border-color: #25bac3;
+  outline: none;
+}
+
+/* Button to remove item */
+#items-section .item-entry button {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: #fff;
+  font-size: 12px;
+  font-weight: normal;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+#items-section .item-entry button:hover {
+  background-color: #e53935;
+}
+
+#items-section .item-entry button:active {
+  background-color: #d32f2f;
+}
+
+/* Add Another Item Button */
+#add-item-btn {
+  padding: 12px 20px;
+  background-color: #444;
+  color: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+#add-item-btn:hover {
+  background-color: #25bac3;
+}
+
+#add-item-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(37, 186, 195, 0.6); /* Focus effect */
+}
+
+/* Submit Button */
+button[type="submit"] {
+  padding: 12px 20px;
+  background-color: #25bac3;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: flex-start;
+}
+
+button[type="submit"]:hover {
+  background-color: #1b8c8f;
+  transform: translateY(-3px); /* Slight hover lift effect */
+}
+
+button[type="submit"]:active {
+  transform: translateY(1px); /* Click effect */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr; /* Stack the form sections on smaller screens */
+    grid-template-rows: auto;
+  }
+
+  .sidepanel {
+    width: 60px;
+  }
+
+  .form-wrapper {
+    padding: 15px;
+  }
+
+  .form-wrapper h2 {
+    font-size: 20px;
+  }
+
+  select, input[type="date"], button {
+    font-size: 12px;
+  }
+
+  #add-item-btn, button[type="button"] {
+    font-size: 12px;
+  }
+
+  /* Adjust item entry to stack vertically on small screens */
+  #items-section .item-entry {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
